@@ -38,7 +38,8 @@ jobs:
 
       - name: Publish package to GitHub Packages
         run: cd Bank && dotnet nuget push *.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ secrets.SONAR_TOKEN }} --skip-duplicate
-
+      - name: Verificar existencia de cobertura.png
+        run: ls -l cobertura.png || echo "Archivo cobertura.png no encontrado"
   release:
     name: Create GitHub Release
     runs-on: ubuntu-latest
