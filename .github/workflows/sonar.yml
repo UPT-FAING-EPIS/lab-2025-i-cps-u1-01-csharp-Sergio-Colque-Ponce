@@ -23,13 +23,14 @@ jobs:
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
       - name: Restaurar los paquetes
-        run: dotnet restore 
+        run: cd Bank && dotnet restore
       - name: Ejecutar pruebas
-        run: dotnet test --collect:"XPlat Code Coverage;Format=opencover"
+        run: cd Bank && dotnet test --collect:"XPlat Code Coverage;Format=opencover"
       - name: Instalar Scanner
         run: dotnet tool install -g dotnet-sonarscanner
       - name: Ejecutar escaneo
         run: | 
+          cd Bank
           dotnet-sonarscanner begin /k:"${{ env.SONAR_PROJECT }}" /o:"${{ env.SONAR_ORG }}" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths="*/*/*/coverage.opencover.xml" /d:sonar.qualitygate.wait=true
           dotnet build
           dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
@@ -39,7 +40,7 @@ jobs:
       - name: Publish package to GitHub Packages
         run: cd Bank && dotnet nuget push *.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ secrets.SONAR_TOKEN }} --skip-duplicate
       - name: Verificar existencia de cobertura.png
-        run: ls -l cobertura.png || echo "Archivo cobertura.png no encontrado"
+        run: cd Bank && ls -l cobertura.png || echo "Archivo cobertura.png no encontrado"
   release:
     name: Create GitHub Release
     runs-on: ubuntu-latest
