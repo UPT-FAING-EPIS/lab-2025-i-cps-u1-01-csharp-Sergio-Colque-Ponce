@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <AnalysisConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
-  <SonarConfigDir>C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce\Bank\.sonarqube\conf</SonarConfigDir>
-  <SonarOutputDir>C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce\Bank\.sonarqube\out</SonarOutputDir>
-  <SonarBinDir>C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce\Bank\.sonarqube\bin</SonarBinDir>
-  <SonarScannerWorkingDirectory>C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce\Bank</SonarScannerWorkingDirectory>
+  <SonarConfigDir>C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce\.sonarqube\conf</SonarConfigDir>
+  <SonarOutputDir>C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce\.sonarqube\out</SonarOutputDir>
+  <SonarBinDir>C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce\.sonarqube\bin</SonarBinDir>
+  <SonarScannerWorkingDirectory>C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce</SonarScannerWorkingDirectory>
   <JavaExePath>C:\Users\Administrator\.sonar\cache\4bafe2e94439c8193fc8c68247cb0dbaf4e80265b903288f63f128304f129bbe\OpenJDK17U-jre_x64_windows_hotspot_17.0.11_9.zip_extracted\jdk-17.0.11+9-jre/bin/java.exe</JavaExePath>
   <ScanAllAnalysis>true</ScanAllAnalysis>
   <HasBeginStepCommandLineCredentials>true</HasBeginStepCommandLineCredentials>
@@ -16,7 +16,7 @@
     <ConfigSetting Id="TfsUri" />
     <ConfigSetting Id="VsCoverageConverterToolPath" />
     <ConfigSetting Id="UnchangedFilesPath" />
-    <ConfigSetting Id="sonar.pullrequest.cache.basepath" Value="C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce\Bank" />
+    <ConfigSetting Id="sonar.pullrequest.cache.basepath" Value="C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce" />
     <ConfigSetting Id="settings.file.path" Value="C:\Users\Administrator\.dotnet\tools\.store\dotnet-sonarscanner\10.1.1\dotnet-sonarscanner\10.1.1\tools\netcoreapp3.1\any\SonarQube.Analysis.xml" />
   </AdditionalConfig>
   <ServerSettings>
@@ -188,9 +188,9 @@ Automatic Analysis will not be available between 07:00 CET and 09:00 CET</Proper
   </ServerSettings>
   <LocalSettings>
     <Property Name="sonar.host.url">https://sonarcloud.io</Property>
-    <Property Name="sonar.cs.opencover.reportsPaths">//*/coverage.opencover.xml</Property>
+    <Property Name="sonar.cs.opencover.reportsPaths">**/coverage.opencover.xml</Property>
     <Property Name="sonar.organization">sergio-colque-ponce</Property>
-    <Property Name="sonar.exclusions">//*/coverage.opencover.xml</Property>
+    <Property Name="sonar.exclusions">**/coverage.opencover.xml</Property>
   </LocalSettings>
   <ScannerOptsSettings>
     <Property Name="javax.net.ssl.trustStoreType">Windows-ROOT</Property>
@@ -198,8 +198,8 @@ Automatic Analysis will not be available between 07:00 CET and 09:00 CET</Proper
   <AnalyzersSettings>
     <AnalyzerSettings>
       <Language>cs</Language>
-      <RulesetPath>C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce\Bank\.sonarqube\conf\Sonar-cs.ruleset</RulesetPath>
-      <DeactivatedRulesetPath>C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce\Bank\.sonarqube\conf\Sonar-cs-none.ruleset</DeactivatedRulesetPath>
+      <RulesetPath>C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce\.sonarqube\conf\Sonar-cs.ruleset</RulesetPath>
+      <DeactivatedRulesetPath>C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce\.sonarqube\conf\Sonar-cs-none.ruleset</DeactivatedRulesetPath>
       <AnalyzerPlugins>
         <AnalyzerPlugin Key="securitycsharpfrontend" Version="11.1.0.35630" StaticResourceName="SonarAnalyzer.Security-11.1.0.35630.zip">
           <AssemblyPaths>
@@ -216,13 +216,13 @@ Automatic Analysis will not be available between 07:00 CET and 09:00 CET</Proper
         </AnalyzerPlugin>
       </AnalyzerPlugins>
       <AdditionalFilePaths>
-        <Path>C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce\Bank\.sonarqube\conf\cs\SonarLint.xml</Path>
+        <Path>C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce\.sonarqube\conf\cs\SonarLint.xml</Path>
       </AdditionalFilePaths>
     </AnalyzerSettings>
     <AnalyzerSettings>
       <Language>vbnet</Language>
-      <RulesetPath>C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce\Bank\.sonarqube\conf\Sonar-vbnet.ruleset</RulesetPath>
-      <DeactivatedRulesetPath>C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce\Bank\.sonarqube\conf\Sonar-vbnet-none.ruleset</DeactivatedRulesetPath>
+      <RulesetPath>C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce\.sonarqube\conf\Sonar-vbnet.ruleset</RulesetPath>
+      <DeactivatedRulesetPath>C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce\.sonarqube\conf\Sonar-vbnet-none.ruleset</DeactivatedRulesetPath>
       <AnalyzerPlugins>
         <AnalyzerPlugin Key="vbnetenterprise" Version="10.7.0.110445" StaticResourceName="SonarAnalyzer-vbnetenterprise-10.7.0.110445.zip">
           <AssemblyPaths>
@@ -233,7 +233,7 @@ Automatic Analysis will not be available between 07:00 CET and 09:00 CET</Proper
         </AnalyzerPlugin>
       </AnalyzerPlugins>
       <AdditionalFilePaths>
-        <Path>C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce\Bank\.sonarqube\conf\vbnet\SonarLint.xml</Path>
+        <Path>C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce\.sonarqube\conf\vbnet\SonarLint.xml</Path>
       </AdditionalFilePaths>
     </AnalyzerSettings>
   </AnalyzersSettings>

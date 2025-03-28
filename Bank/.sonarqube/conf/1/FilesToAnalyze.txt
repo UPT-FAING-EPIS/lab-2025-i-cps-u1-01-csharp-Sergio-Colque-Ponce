@@ -7,8 +7,11 @@ C:\Users\Administrator\.nuget\packages\nunit3testadapter\5.0.0\build\netcoreapp3
 C:\Users\Administrator\.nuget\packages\nunit3testadapter\5.0.0\build\netcoreapp3.1\nunit.engine.api.dll
 C:\Users\Administrator\.nuget\packages\nunit3testadapter\5.0.0\build\netcoreapp3.1\nunit.engine.core.dll
 C:\Users\Administrator\.nuget\packages\nunit3testadapter\5.0.0\build\netcoreapp3.1\testcentric.engine.metadata.dll
+C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce\Bank\Bank.Domain.Tests\TestResults\2e2e974b-c771-4809-b5a9-b4a46da0eae3\coverage.opencover.xml
+C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce\Bank\Bank.Domain.Tests\TestResults\3ebb4533-fe94-4014-8f2c-c7a4067afee7\coverage.cobertura.xml
 C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce\Bank\Bank.Domain.Tests\TestResults\4d70b9ac-4b22-40be-876e-8c38b6afbd23\coverage.cobertura.xml
 C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce\Bank\Bank.Domain.Tests\TestResults\71937df7-1014-4720-ba9c-6be93e031cee\coverage.cobertura.xml
+C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce\Bank\Bank.Domain.Tests\TestResults\c255fb25-0de9-46bf-8fa3-0bd3a3774438\coverage.cobertura.xml
 C:\Users\Administrator\.nuget\packages\nunit3testadapter\5.0.0\build\netcoreapp3.1\NUnit3.TestAdapter.dll
 C:\Users\Administrator\.nuget\packages\mstest.testadapter\3.1.1\build\net6.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Users\Administrator\.nuget\packages\mstest.testadapter\3.1.1\build\net6.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
