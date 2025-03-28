@@ -1,0 +1,1 @@
+¼R¥C:\Users\Administrator\Desktop\Calidad y Prueba de Software\intento 2\lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce\Bank\Bank.Domain.Tests\Bank.Domain.Tests.csproj¢net8.0òCSharp12

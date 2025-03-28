@@ -1,0 +1,7 @@
+organization=sergio-colque-ponce
+projectKey=sergio-colque-ponce_apibank
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.61173
+dashboardUrl=https://sonarcloud.io/dashboard?id=sergio-colque-ponce_apibank
+ceTaskId=AZXamhSlD2m49m-ws20I
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZXamhSlD2m49m-ws20I
