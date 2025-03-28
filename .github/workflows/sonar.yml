@@ -3,6 +3,7 @@ env:
   DOTNET_VERSION: '8.0.204'                     # la versión de .NET
   SONAR_ORG: 'sergio-colque-ponce'                    # Nombre de la organización de sonar cloud
   SONAR_PROJECT: 'sergio-colque-ponce_apibank'        # Key ID del proyecto de sonar
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 on:
   push:
     branches: [ "main" ]
@@ -38,8 +39,8 @@ jobs:
         run: cd Bank && dotnet pack Bank/Bank.Domain/Bank.Domain.csproj --configuration Release --output .
       - name: Publish package to GitHub Packages
         run: cd Bank && dotnet nuget push *.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ secrets.SONAR_TOKEN }} --skip-duplicate
-      - name: Verificar existencia de cobertura.png
-        run: cd Bank && ls -l cobertura.png || echo "Archivo cobertura.png no encontrado"
+      - name: Autenticación en GitHub CLI
+        run: echo $GH_TOKEN | gh auth login --with-token
   release:
     name: Create GitHub Release
     runs-on: ubuntu-latest
