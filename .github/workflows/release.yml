@@ -1,0 +1,41 @@
+name: Publicar NuGet y Crear Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"  # Se activará cuando hagas un tag como v1.0.0
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Clonar el repositorio
+        uses: actions/checkout@v4
+
+      - name: 🔄 Configurar .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: 📦 Restaurar dependencias
+        run: dotnet restore
+
+      - name: 🏗️ Construir el proyecto
+        run: dotnet build --configuration Release --no-restore
+
+      - name: 🏗️ Generar el paquete NuGet
+        run: dotnet pack --configuration Release --output nupkg
+
+      - name: 📤 Publicar el paquete en GitHub Packages
+        run: dotnet nuget push "nupkg/*.nupkg" --source "https://nuget.pkg.github.com/Sergio-Colque-Ponce/index.json" --api-key ${{ secrets.GITHUB_TOKEN }} --skip-duplicate
+
+      - name: 🏷️ Crear GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: "Release ${{ github.ref_name }}"
+          body: "Cambios en esta versión:\n${{ github.event.head_commit.message }}"
+          files: nupkg/*.nupkg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
