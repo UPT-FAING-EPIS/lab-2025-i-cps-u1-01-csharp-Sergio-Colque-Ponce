@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Verificar archivos después del checkout
+        run: ls -R
       - uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
@@ -23,20 +25,20 @@ jobs:
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
       - name: Restaurar los paquetes
-        run: cd Bank && dotnet restore
+        run: dotnet restore Bank/Bank.sln
       - name: Ejecutar pruebas
-        run: cd Bank && dotnet test --collect:"XPlat Code Coverage;Format=opencover"
+        run: dotnet test Bank/Bank.sln --collect:"XPlat Code Coverage;Format=opencover"
       - name: Instalar Scanner
         run: dotnet tool install -g dotnet-sonarscanner
       - name: Ejecutar escaneo
         run: | 
           dotnet sonarscanner begin /k:"${{ env.SONAR_PROJECT }}" /o:"${{ env.SONAR_ORG }}" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml" /d:sonar.qualitygate.wait=true
-          cd Bank && dotnet build
-          cd Bank && dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+          dotnet build Bank/Bank.sln
+          dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
       - name: Pack NuGet package
-        run: cd Bank && dotnet pack Bank/Bank.Domain/Bank.Domain.csproj --configuration Release --output .
+        run: dotnet pack Bank/Bank.Domain/Bank.Domain.csproj --configuration Release --output .
       - name: Publish package to GitHub Packages
-        run: cd Bank && dotnet nuget push *.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ secrets.SONAR_TOKEN }} --skip-duplicate
+        run: dotnet nuget push *.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ secrets.SONAR_TOKEN }} --skip-duplicate
   release:
     name: Create GitHub Release
     runs-on: ubuntu-latest
