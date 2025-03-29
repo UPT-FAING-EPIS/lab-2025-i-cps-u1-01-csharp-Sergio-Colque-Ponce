@@ -8,7 +8,7 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 
-jobs:
+#jobs:
   # sonarqube:
     # name: Sonarqube Analisys
     # runs-on: ubuntu-latest
@@ -39,8 +39,9 @@ jobs:
         # run: dotnet pack Bank/Bank.Domain/Bank.Domain.csproj --configuration Release --output .
       # - name: Publish package to GitHub Packages
         # run: dotnet nuget push *.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ secrets.SONAR_TOKEN }} --skip-duplicate
+jobs:
   sonarqube:
-    name: Sonarqube Analisys
+    name: Sonarqube Analysis and NuGet Publishing
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -48,7 +49,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-      - name: Configurando la version de NET
+      - name: Configurando la versión de NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
@@ -56,15 +57,21 @@ jobs:
         run: dotnet tool install -g dotnet-sonarscanner
       - name: Restaurar dependencias
         run: dotnet restore "Bank/Bank.sln"
-      - name: Ejecutar 
+      - name: Ejecutar pruebas
         run: dotnet test "Bank/Bank.sln" --collect:"XPlat Code Coverage;Format=opencover"
-      - name: Iniciar analisis SonarQube
+      - name: Iniciar análisis SonarQube
         run: dotnet-sonarscanner begin /k:"${{ env.SONAR_PROJECT }}" /o:"${{ env.SONAR_ORG }}" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths="Bank/**/coverage.opencover.xml" /d:sonar.qualitygate.wait=true
-      - name: Compilar solucion
+      - name: Compilar solución
         run: dotnet build "Bank/Bank.sln"
-      - name: Finalizar analisis SonarQube
+      - name: Finalizar análisis SonarQube
         run: |
           dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+      - name: Crear paquete NuGet
+        run: |
+          dotnet pack "Bank/Bank.sln" --configuration Release --output ./packages
+      - name: Publicar paquete en GitHub Packages
+        run: |
+          dotnet nuget push ./packages/*.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ secrets.GH_TOKEN }} --skip-duplicate
   release:
     name: Create GitHub Release
     runs-on: ubuntu-latest
