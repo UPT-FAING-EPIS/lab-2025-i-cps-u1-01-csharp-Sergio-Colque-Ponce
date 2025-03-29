@@ -49,7 +49,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-      - name: Configurando la versión de NET
+      - name: Configurando la versión de NET #test
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
