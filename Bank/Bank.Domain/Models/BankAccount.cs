@@ -14,13 +14,14 @@ namespace Bank.Domain.Models
         public double Balance { get { return m_balance; }  }
         public void Debit(double amount)
         {
-            ArgumentOutOfRangeException.ThrowIfGreaterThan(amount, m_balance, nameof(amount));
-            ArgumentOutOfRangeException.ThrowIfNegative(amount, nameof(amount));
+            ArgumentOutOfRangeException.ThrowIfGreaterThan(amount, m_balance);
+            ArgumentOutOfRangeException.ThrowIfNegative(amount);
             m_balance -= amount;
         }
+
         public void Credit(double amount)
         {
-            ArgumentOutOfRangeException.ThrowIfNegative(amount, nameof(amount));
+            ArgumentOutOfRangeException.ThrowIfNegative(amount);
             m_balance += amount;
         }
     }
