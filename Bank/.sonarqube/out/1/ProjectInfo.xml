@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>Bank.Domain.Tests</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Test</ProjectType>
+  <ProjectGuid>cfb1f3ce-927c-47f1-ba62-a1b8dd55e849</ProjectGuid>
+  <FullPath>C:\Users\Administrator\Desktop\Nueva carpeta (4)\si784_2025-i-lab_2025_i_cps_u1_01_csharp-lab_calidad_01\Bank\Bank.Domain.Tests\Bank.Domain.Tests.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="C:\Users\Administrator\Desktop\Nueva carpeta (4)\si784_2025-i-lab_2025_i_cps_u1_01_csharp-lab_calidad_01\Bank\.sonarqube\conf\1\FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings>
+    <Property Name="sonar.cs.roslyn.reportFilePaths">C:\Users\Administrator\Desktop\Nueva carpeta (4)\si784_2025-i-lab_2025_i_cps_u1_01_csharp-lab_calidad_01\Bank\.sonarqube\out\1\Issues.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPaths">C:\Users\Administrator\Desktop\Nueva carpeta (4)\si784_2025-i-lab_2025_i_cps_u1_01_csharp-lab_calidad_01\Bank\.sonarqube\out\1</Property>
+  </AnalysisSettings>
+  <Configuration>Debug</Configuration>
+  <Platform>AnyCPU</Platform>
+  <TargetFramework>net8.0</TargetFramework>
+</ProjectInfo>

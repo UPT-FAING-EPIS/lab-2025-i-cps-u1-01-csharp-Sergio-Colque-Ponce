@@ -1,0 +1,5 @@
+Ä
+C:\Users\Administrator\Desktop\Nueva carpeta (4)\si784_2025-i-lab_2025_i_cps_u1_01_csharp-lab_calidad_01\Bank\Bank.Domain\Models\BankAccount.cs	 8r	
+‚
+
+

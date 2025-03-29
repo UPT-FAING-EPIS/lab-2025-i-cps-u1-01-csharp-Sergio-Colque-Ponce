@@ -1,0 +1,7 @@
+organization=sergio-colque-ponce
+projectKey=sergio-colque-ponce_lab-2025-i-cps-u1-01-csharp-sergio-colque-ponce
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.61173
+dashboardUrl=https://sonarcloud.io/dashboard?id=sergio-colque-ponce_lab-2025-i-cps-u1-01-csharp-sergio-colque-ponce
+ceTaskId=AZXjfzugzkIV1yJ8A5cg
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZXjfzugzkIV1yJ8A5cg
