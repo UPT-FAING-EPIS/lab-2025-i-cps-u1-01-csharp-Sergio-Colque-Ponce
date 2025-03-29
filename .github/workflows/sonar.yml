@@ -1,6 +1,6 @@
 name: Sonar Continuos Integration
 env:
-  DOTNET_VERSION: '8.0.204'                     # la versión de .NET
+  DOTNET_VERSION: '8.0'                     # la versión de .NET
   SONAR_ORG: 'sergio-colque-ponce'                    # Nombre de la organización de sonar cloud
   SONAR_PROJECT: 'sergio-colque-ponce_apibank'        # Key ID del proyecto de sonar
 on:
