@@ -42,7 +42,7 @@ jobs:
         #run: dotnet nuget add source "https://nuget.pkg.github.com/Sergio-Colque-Ponce/index.json" -n "GitHub"
         run: dotnet nuget add source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" -n "GitHub"
       - name: Buscarr paquete
-        run: dotnet nuget search Bank.Domain --source "GitHub"
+        run: dotnet add package Bank.Domain --source "GitHub"
       #- name: Crear paquete NuGet
         #run: dotnet pack "Bank/Bank.sln" --configuration Release --output ./packages
       #- name: Publicar en GitHub Packages
