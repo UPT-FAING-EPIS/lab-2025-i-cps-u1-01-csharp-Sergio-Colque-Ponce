@@ -39,7 +39,8 @@ jobs:
       - name: VERIFIICAR PACKETE
         run: dotnet nuget list source
       - name: agregar paquete
-        run: dotnet nuget add source "https://nuget.pkg.github.com/Sergio-Colque-Ponce/index.json" -n "GitHub"
+        #run: dotnet nuget add source "https://nuget.pkg.github.com/Sergio-Colque-Ponce/index.json" -n "GitHub"
+        #run: dotnet nuget add source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" -n "GitHub"
       - name: Buscarr paquete
         run: dotnet nuget search Bank.Domain --source "GitHub"
       #- name: Crear paquete NuGet
