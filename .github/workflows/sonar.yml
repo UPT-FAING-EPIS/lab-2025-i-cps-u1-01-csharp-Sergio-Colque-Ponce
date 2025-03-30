@@ -41,27 +41,27 @@ jobs:
         run: |
           dotnet nuget push ./packages/*.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ secrets.GH_TOKEN }} --skip-duplicate
   release:
-    name: Generar Release en GitHub
+    name: Generar RELEASE
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Generar tag dinámico
+      - name: Generar tag
         id: generate_tag
-        run: echo "TAG_NAME=release-$(date +'%Y%m%d-%H%M%S')" >> $GITHUB_ENV
-      - name: Obtener notas de los commits
+        run: echo "NAME=release-$(date +'%Y%m%d-%H%M%S')" >> $GITHUB_ENV
+      - name: Obtener comentarios commits
         id: changelog
         run: |
-          echo "## Cambios en la versión ${{ env.TAG_NAME }}" > release_notes.md
-          git log --pretty=format:"- %s" -n 10 >> release_notes.md
-      - name: Crear nuevo tag
+          echo "## Cambios en la versión ${{ env.NAME }}" > release.md
+          git log --pretty=format:"- %s" -n 10 >> release.md
+      - name: Crear TAG
         run: |
-          git tag ${{ env.TAG_NAME }}
-          git push origin ${{ env.TAG_NAME }}
-      - name: Crear Release en GitHub
+          git tag ${{ env.NAME }}
+          git push origin ${{ env.NAME }}
+      - name: Crear RELEASE
         uses: ncipollo/release-action@v1
         with:
-          tag: ${{ env.TAG_NAME }}
-          name: "Release ${{ env.TAG_NAME }}"
-          bodyFile: "release_notes.md"
+          tag: ${{ env.NAME }}
+          name: "Release ${{ env.NAME }}"
+          bodyFile: "release.md"
           token: ${{ secrets.GH_TOKEN }}
           replacesArtifacts: true
