@@ -33,7 +33,7 @@ jobs:
       #- name: Iniciar análisis SonarQube
         #run: dotnet-sonarscanner begin /k:"${{ env.SONAR_PROJECT }}" /o:"${{ env.SONAR_ORG }}" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths="Bank/**/coverage.opencover.xml" /d:sonar.qualitygate.wait=true
       - name: Compilar solución
-        #run: dotnet build "Bank/Bank.sln"
+        run: dotnet build "Bank/Bank.sln"
       #- name: Finalizar análisis SonarQube
         #run: dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
       ###- name: Crear paquete NuGet
