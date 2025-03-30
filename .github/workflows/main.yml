@@ -1,2 +1,13 @@
-env:
-  GH_TOKEN: ${{ secrets.GH_TOKEN_V2 }}
+name: Set GH_TOKEN
+'on':
+  - workflow_dispatch  
+  - push               
+jobs:
+  set-gh-token:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Exportar GH_TOKEN para CLASSROOM.YML
+        run: echo "GH_TOKEN=${{ secrets.GH_TOKEN_V2 }}" >> $GITHUB_ENV
