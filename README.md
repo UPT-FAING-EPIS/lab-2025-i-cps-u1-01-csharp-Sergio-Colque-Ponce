@@ -1,8 +1,9 @@
 # SESION DE LABORATORIO N° 01: PRUEBAS ESTATICAS DE SEGURIDAD DE APLICACIONES CON SONARQUBE
 
+## NOMBRE: SERGIO ALBERTO COLQUE PONCE
+
 ## OBJETIVOS
   * Comprender el funcionamiento de las pruebas estaticas de seguridad de còdigo de las aplicaciones que desarrollamos utilizando SonarQube.
-
 ## REQUERIMIENTOS
   * Conocimientos: 
     - Conocimientos básicos de Bash (powershell).
