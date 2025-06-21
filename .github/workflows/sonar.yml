@@ -35,10 +35,10 @@ jobs:
         run: dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
       - name: Crear paquete NuGet
         run: |
-          dotnet pack "Bank/Bank.sln" -c Release \
+          dotnet pack Bank/Bank.Domain/Bank.Domain.csproj -c Release \
             -p:PackageId=Bank.Domain.Lab01UI \
             -p:PackageVersion=202.207.3503 \
-            -p:RepositoryUrl=https://github.com/${{ github.repository }} \
+            -p:RepositoryUrl=https://github.com/UPT-FAING-EPIS/lab-2025-i-cps-u1-01-csharp-Sergio-Colque-Ponce \
             -p:RepositoryType=git \
             --output ./packages
       - name: Publicar paquete en GitHub Packages
